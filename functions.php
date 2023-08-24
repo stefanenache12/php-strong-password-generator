@@ -1,15 +1,20 @@
 <?php
 
-    function generatePassword($length, $chars) {
-        $password = '';
-        
-        for ($i = 0; $i < $length; $i++) {
-            $randomIndex = mt_rand(0, strlen($chars) - 1);
-            $password .= $chars[$randomIndex];
-        }
-        
-        return $password;
+function generatePassword($length, $chars) {
+    if ($length <= 0 || strlen($chars) === 0) {
+        return ''; 
     }
+
+    $password = '';
+    $charsCount = strlen($chars);
+
+    for ($i = 0; $i < $length; $i++) {
+        $randomIndex = mt_rand(0, $charsCount - 1);
+        $password .= $chars[$randomIndex];
+    }
+
+    return $password;
+}
 
     $chars = '';
     if ($includeLetters) {

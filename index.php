@@ -1,8 +1,8 @@
 <?php
-    $passwordLength = $_GET["passwordLength"];
-    $includeLetters = $_GET["includeLetters"];
-    $includeNumbers = $_GET["includeNumbers"];
-    $includeSymbols = $_GET["includeSymbols"];
+     $passwordLength = isset($_GET["passwordLength"]) ? $_GET["passwordLength"] : 12;
+     $includeLetters = isset($_GET["includeLetters"]) ? $_GET["includeLetters"] : false;
+     $includeNumbers = isset($_GET["includeNumbers"]) ? $_GET["includeNumbers"] : false;
+     $includeSymbols = isset($_GET["includeSymbols"]) ? $_GET["includeSymbols"] : false;
 
     include __DIR__ . '/functions.php';
 
